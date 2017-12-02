@@ -16,7 +16,7 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body onload="fetchbookmarks()">
 
 
 
@@ -60,9 +60,6 @@
             </div>
 
 
-
-
-
            </form>
         </div>
        
@@ -71,10 +68,35 @@
                Made with Vanilla Javascript :)</h3>
         </footer>
 
+        <br><br>
+        
+        
     </div> 
+    
+    
+    
+    
+            <div class="container" id="divresults" >
+                <!-- BOOKMARKS RESULT -->
+            
+            <table class="table table-striped table-hover text-center  mx-auto">
+                <thead class="thead-dark">
+                    <th scope="col">#</th>
+                    <th scope="col">Site Name</th>
+                    <th scope="col">URL</th>
+                </thead>
+
+                <tbody id="results">
+                        <td>1</td>
+                        <td>Site : </td>
+                        <td>Visit ! </td>
+            
+                </tbody>
 
 
-
+            </table>
+    
+            </div>
 
 
     <!-- SCRIPTS -->
