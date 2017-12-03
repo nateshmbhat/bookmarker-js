@@ -60,15 +60,40 @@ function fetchbookmarks()
            //THe Below string is an HTML TEMPLATE which only works in ES6
            console.log('Starting template') ;
            mystring = `\
-            <td>${i+1}</td>\
-            <td>${name}</td>\
-            <td>${url}</td>\ 
+           <trow>
+
+            <td >${i+1}</td>\
+            <td class="font-weight-bold ">${name.toUpperCase()}</td>\
+            
+            <td class="font-weight-bold" style="color:blue;">
+            
+            <a href="${url}"  title="${name}" target="_blank">${url}</a>
+            <input type="button" onclick=deletebookmark('${url}')  class="btn btn-danger btn-sm" name="Delete" value="Delete"/>
+            </td>\ 
+        </trow>
            `
            
-           console.log($('#results').val()) ;
+           console.log($('#table_results').val()) ;
 
-           document.getElementById('results').innerHTML+= mystring
+           document.getElementById('table_results').innerHTML+= mystring
 
        }
+}
 
+
+function deletebookmark(url)
+{
+    console.log('start deletion') ;
+    console.log($(event.target).parent().parent()) ;
+
+    bookmarks  = JSON.parse(localStorage.getItem('bookmarks')) ;
+
+    for(i= 0 ; i<bookmarks.length ; i++)
+        {
+            if(bookmarks[i].url==url)
+                {
+                    console.log("Deleted " + bookmarks[i]) ;                    
+                    bookmarks.pop(i) ; 
+                }
+        }
 }

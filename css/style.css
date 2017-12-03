@@ -1,4 +1,15 @@
 /* Space out content a bit */
+
+a.anchor{
+  text-decoration-color: cadetblue ;
+  color:blue ;
+}
+
+a.anchor:hover{
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+}
+
 body {
   padding-top: 20px;
   padding-bottom: 20px;
