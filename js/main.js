@@ -1,7 +1,5 @@
 
-
 $('#myform').submit(submitclicked) ;
-
 
 function submitclicked(e)
 {
@@ -15,6 +13,7 @@ function submitclicked(e)
        url : url 
    }
 
+   
 
    if(localStorage.getItem('bookmarks')==null)
    {
@@ -39,6 +38,8 @@ function submitclicked(e)
        console.log(bookmarks) ; 
        
    }
+
+   $('#bm_success').show() ;
 
     e.preventDefault() ;
     

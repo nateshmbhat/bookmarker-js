@@ -31,43 +31,50 @@
         </header>
        <div class="jumbotron">
    
-           <h3 class="text-center">Bookmark your favorite site !  </h3>
+           <h3 class=" text-center">Bookmark your favorite site !  </h3>
            
            <form  id="myform">
-            
-
-
-
-            <div class="form-group">
-                <label for=""> <strong>Site Name : </strong> </label>
-                
-                <input type="text" name="sitename" id="sitename" class="form-control" placeholder="Enter site name : " required>
-                <div class="invalid-feedback">
-                        Please provide a Valid Site name.
+               
+               
+               
+               
+               <div class="form-group">
+                   <label for=""> <strong>Site Name : </strong> </label>
+                   
+                   <input type="text" name="sitename" id="sitename" class="form-control" placeholder="Enter site name : " required>
+                   <div class="invalid-feedback">
+                       Please provide a Valid Site name.
+                    </div>
+                    
                 </div>
-
-            </div>
-
-
-            <br>
-            <div class="form-group">
-                <label for=""> <strong>Site URL : </strong> </label>
-                <input type="text" name="siteurl" id="siteurl" class="form-control" placeholder="Enter URL : " required> </div> 
-        
-            <div class="text-center">
-                <input type="submit"  id="submitbutton" value="Submit" class="btn btn-primary">
-            </div>
-
-
-           </form>
-        </div>
-       
-       <footer>
-           <hr>
-               Made with Vanilla Javascript :)</h3>
-        </footer>
-
-        <br><br>
+                
+                
+                <br>
+                <div class="form-group">
+                    <label for=""> <strong>Site URL : </strong> </label>
+                    <input type="text" name="siteurl" id="siteurl" class="form-control" placeholder="Enter URL : " required> </div> 
+                    
+                    <div class="text-center">
+                        <input type="submit"  id="submitbutton" value="Submit" class="btn btn-primary">
+                    </div>
+                    
+                    
+                </form>
+                
+                <div role="alert" id="bm_success" class="hidden text-center animated fadeIn h-100 p-2 rounded  alert-success">
+                    Bookmarking successful !
+                
+                </div>
+    </div>
+    
+    
+    
+    <footer>
+        <hr>
+        Made with Vanilla Javascript :)</h3>
+    </footer>
+    
+    <br><br>
         
         
     </div> 
@@ -75,26 +82,26 @@
     
     
     
-            <div class="container" id="divresults" >
-                <!-- BOOKMARKS RESULT -->
+    <div class="container" id="divresults" >
+        <!-- BOOKMARKS RESULT -->
+        
+        <table class=" table table-striped table-hover text-center  mx-auto">
+            <thead class="thead-dark">
+                <th scope="col" class="col-auto">#</th>
+                <th scope="col" class="col-auto">Site Name</th>
+                <th scope="col" class="col-auto" >URL</th>
+            </thead>
             
-            <table class=" table table-striped table-hover text-center  mx-auto">
-                <thead class="thead-dark">
-                    <th scope="col" class="col-auto">#</th>
-                    <th scope="col" class="col-auto">Site Name</th>
-                    <th scope="col" class="col-auto" >URL</th>
-                </thead>
-
-                <tbody id="table_results">
-           
-                </tbody>
-
-
-            </table>
+            <tbody id="table_results">
+                
+            </tbody>
+            
+            
+        </table>
+        
+    </div>
     
-            </div>
-
-
+    
     <!-- SCRIPTS -->
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
@@ -104,7 +111,7 @@
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/main.js"></script>
-
+    
 </body>
 
 </html>
