@@ -3,6 +3,8 @@
         "include": [
             "jquery"
         ]
+    },
+    "dependencies": {
+        "@types/jquery": "^3.2.16"
     }
-
 }

@@ -9,6 +9,7 @@ function submitclicked(e)
    var site  = $('#sitename').val() ; 
    var url = $('#siteurl').val() ;
 
+   
    bookmark = {
        name : site , 
        url : url 
