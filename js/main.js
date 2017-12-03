@@ -1,4 +1,6 @@
-document.getElementById('myform').addEventListener('submit' , submitclicked) ;
+
+
+$('#myform').submit(submitclicked) ;
 
 
 function submitclicked(e)
@@ -6,7 +8,6 @@ function submitclicked(e)
 
    var site  = $('#sitename').val() ; 
    var url = $('#siteurl').val() ;
-   
 
    bookmark = {
        name : site , 
@@ -50,6 +51,11 @@ function fetchbookmarks()
        bookmarks = JSON.parse(bookmarks) ;
        console.log(bookmarks) ;
 
+       if(bookmarks.length==0)
+            {
+                $('.thead-dark').hide() ;
+            }
+
 
        for(i = 0 ; i<bookmarks.length  ; i++)
        {
@@ -85,15 +91,27 @@ function deletebookmark(url)
 {
     console.log('start deletion') ;
     console.log($(event.target).parent().parent()) ;
-
+    var data_row =  $(event.target).parent().parent()
+    
     bookmarks  = JSON.parse(localStorage.getItem('bookmarks')) ;
-
+    
     for(i= 0 ; i<bookmarks.length ; i++)
-        {
-            if(bookmarks[i].url==url)
+    {
+        if(bookmarks[i].url==url)
                 {
+                    data_row.addClass('animated fadeOutRight').fadeOut() ;
                     console.log("Deleted " + bookmarks[i]) ;                    
                     bookmarks.pop(i) ; 
+
+                    localStorage.setItem('bookmarks' , JSON.stringify(bookmarks)) ;
+                    break ;
                 }
-        }
+    }
+    
+    //Check if the list has become empty !
+    console.log('boomarks.length = ' , bookmarks.length)
+    if(!bookmarks.length)
+    {
+        $('.thead-dark').addClass('animated fadeOut').fadeOut() ;
+    }
 }
