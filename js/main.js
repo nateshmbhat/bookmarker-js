@@ -1,5 +1,7 @@
 
 $('#myform').submit(submitclicked) ;
+$('#bm_success').hide() ;
+
 
 function submitclicked(e)
 {
@@ -40,6 +42,7 @@ function submitclicked(e)
    }
 
    $('#bm_success').show() ;
+   fetchbookmarks() ;
 
     e.preventDefault() ;
     
@@ -51,11 +54,13 @@ function fetchbookmarks()
 {
        bookmarks = localStorage.getItem('bookmarks');
        bookmarks = JSON.parse(bookmarks) ;
+       $('#bm_success').hide() ; 
        console.log(bookmarks) ;
 
        if(bookmarks.length==0)
             {
                 $('.thead-dark').hide() ;
+                $('#bm_success').hide() ;
             }
 
 
