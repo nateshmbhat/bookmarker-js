@@ -54,6 +54,9 @@ function fetchbookmarks()
 {
        bookmarks = localStorage.getItem('bookmarks');
        bookmarks = JSON.parse(bookmarks) ;
+
+       $('#table_results').html('') ;
+
        $('#bm_success').hide() ; 
        console.log(bookmarks) ;
 
